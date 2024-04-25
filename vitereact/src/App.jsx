@@ -1,16 +1,14 @@
 import Chai from "./chai"
 
 function App() {
+
+  const username ="Andesh Kumar Sah"
   
   return (
-        // esme yek hi element return kar sakte hai
-        //fregement 
         <>
-
          <Chai/>
-         <h1>Andesh Kumar Sah</h1>
-         <p>Test hai ye</p>
-
+         <h1>Chai Or Code {username}</h1>
+         <p>test para</p>
         </>
        
   )

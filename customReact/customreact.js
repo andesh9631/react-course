@@ -1,11 +1,24 @@
 
 function customRender(reactElement,container){
+    /*
     const docElement = document.createElement(reactElement.type)
-
     docElement.innerHTML =reactElement.children
     docElement.setAttribute('href',reactElement.props.href)
     docElement.setAttribute('target',reactElement.props.target)
-   container.appendChild(docElement)
+    container.appendChild(docElement)  */
+
+
+//loop ka use karenge !!!
+    const docElement = document.createElement(reactElement.type)
+    docElement.innerHTML =reactElement.children
+
+    for(const propVal in reactElement.props){
+        if(propVal === 'children') continue;
+         
+        docElement.setAttribute(propVal,reactElement.props[propVal])
+    }
+
+    container.appendChild(docElement)
 
 }
 
@@ -24,4 +37,4 @@ const reactElement ={
 const mainContainer = document.querySelector("#root");
 
 
-customRender(reactElement,container)
+customRender(reactElement,mainContainer)
